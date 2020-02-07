@@ -1,10 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Tolkachev from "./Tolkachev";
 
 function App() {
   return (
     <div className="App">
+      <Tolkachev/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
