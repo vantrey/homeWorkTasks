@@ -1,9 +1,9 @@
 import React from 'react';
-import './Tolkachev.css'
+import style from './Tolkachev.module.css'
 class Tolkachev extends React.Component {
     render = () => {
         return (
-                <div id="tolkachev">
+                <div className={style.tolkachev}>
                     Толкачёв Иван Борисович
                 </div>
         );

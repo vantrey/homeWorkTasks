@@ -1,0 +1,22 @@
+.daysStyle {
+  margin-left: 5px;
+  padding: 5px;
+  border: 1px solid black;
+  width: 82px;
+}
+.mondayDecoration {
+  color: green;
+}
+.tuesdayDecoratin{
+  color: yellow;
+}
+.wednesdayDecoratin{
+  color: red;
+}
+.thursdayDecoratin{
+  color: violet;
+}
+.fridayDecoratin{
+  color: #00d1cf;
+}
+
