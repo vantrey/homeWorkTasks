@@ -8,10 +8,10 @@ const TolkachevSkills = () => {
     {skill: 'красивый'},
     {skill: 'обоятеленый'},
   ];
-  let skillsElements = skills.map(item => {
-    return (
-      <TolkachevSkill skill={item.skill}/>
-    )
+  let skillsElements = skills.map((item, i) => {
+      return (
+        <TolkachevSkill key={i} skill={item.skill}/>
+      )
   });
   return (
     <div className={style.skills}>
