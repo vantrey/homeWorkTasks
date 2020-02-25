@@ -5,7 +5,7 @@ class InterestsTitle extends React.Component {
 
   render = () => {
     return (
-      <h3 className={styles.interestsTitle}>Мои интересы</h3>
+      <h3 className={styles.interestsTitle}>{this.props.interestsTitle}</h3>
     )
   }
 }

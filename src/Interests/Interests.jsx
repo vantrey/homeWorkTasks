@@ -6,13 +6,14 @@ import InterestsTitle from "./InterestsTitle/InterestsTitle";
 class Interests extends React.Component {
 
   render = () => {
-    let interestsEl = this.props.interests.map((interest, index) => {
+    let interestsEl = this.props.interestsContent.interests.map((
+      interest, index) => {
         return <Interest key={index} interest={interest}/>
       }
     )
     return (
       <div className={styles.interestsWrapper}>
-        <InterestsTitle/>
+        <InterestsTitle interestsTitle={this.props.interestsContent.interestsTitle}/>
         <div className={styles.interests}>
           {interestsEl}
         </div>

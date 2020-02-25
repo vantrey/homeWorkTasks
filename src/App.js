@@ -10,18 +10,21 @@ class App extends React.Component {
       presentName: 'Толкачев Иван',
       presentTemplate: 'Привет! Меня зовут'
     },
-    interests: [
-      {interestTitle: 'настолки'},
-      {interestTitle: 'футбол'},
-      {interestTitle: 'программирование'},
-    ],
+    interestsContent: {
+      interestsTitle: 'Мои интересы',
+      interests: [
+        {interestName: 'настолки'},
+        {interestName: 'футбол'},
+        {interestName: 'программирование'},
+      ],
+    }
   }
 
   render = () => {
     return (
       <div className='App'>
         <Presentation presentation={this.state.presentation}/>
-        <Interests interests={this.state.interests}/>
+        <Interests interestsContent={this.state.interestsContent}/>
         <Greetings/>
       </div>
     );
