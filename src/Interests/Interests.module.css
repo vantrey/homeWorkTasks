@@ -7,10 +7,6 @@
   flex-wrap: wrap;
 }
 
-.interestsTitle {
-
-}
-
 .interestsWrapper {
-
+  border: thin solid black;
 }

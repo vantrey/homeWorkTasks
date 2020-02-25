@@ -1,8 +1,12 @@
-import React from 'react';
-import styles from './TolkachevInput.module.css'
+import React from 'react'
+import styles from './Greetings.module.css'
+import GreetingsInput from "./GreetingsInput/GreetingsInput"
+import GreetingsButton from "./GreetingsButton/GreetingsButton"
+import GreetingsOutput from "./GreetingsOutput/GreetingsOutput"
+import GreetingsTitle from "./GreetingsTitle/GreetingsTitle"
 
-class TolkachevInput extends React.Component {
-  constructor(props) {
+class Greetings extends React.Component {
+  /*constructor(props) {
     super(props);
     this.inputRef = React.createRef()
   }
@@ -23,17 +27,23 @@ class TolkachevInput extends React.Component {
     } else {
       alert(`Please, enter someone's name to greetings!`)
     }
-  }
+  }*/
 
   render = () => {
     return (
-      <div className={styles.container}>
+      <div className={styles.greetingsWrapper}>
+        <GreetingsTitle/>
+        <GreetingsInput/>
+        <GreetingsButton/>
+        <GreetingsOutput/>
+      </div>
+      /*<div className={styles.container}>
         <span className={styles.counter}>{this.state.counter}</span>
         <input placeholder={`Enter someone's name`} ref={this.inputRef}/>
         <button className={styles.button} onClick={this.OnClickHelloButton}>Hello</button>
-      </div>
+      </div>*/
     )
   }
 }
 
-export default TolkachevInput
+export default Greetings

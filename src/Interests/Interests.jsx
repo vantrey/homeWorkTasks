@@ -1,6 +1,7 @@
 import React from "react";
 import Interest from "./Interest/Interest";
-import style from './Interests.module.css'
+import styles from './Interests.module.css'
+import InterestsTitle from "./InterestsTitle/InterestsTitle";
 
 class Interests extends React.Component {
 
@@ -10,9 +11,9 @@ class Interests extends React.Component {
       }
     )
     return (
-      <div className={style.interestsWrapper}>
-        <h3 className={style.interestsTitle}>Мои интересы</h3>
-        <div className={style.interests}>
+      <div className={styles.interestsWrapper}>
+        <InterestsTitle/>
+        <div className={styles.interests}>
           {interestsEl}
         </div>
       </div>
