@@ -5,7 +5,7 @@ class PresentName extends React.Component {
   render = () => {
     return (
       <div className={style.presentName}>
-        Иван Толкачёв
+        {this.props.presentsName}
       </div>
     );
   }

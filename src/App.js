@@ -1,16 +1,24 @@
 import React from 'react';
 import './App.css';
-import TolkachevProgress from "./TolkachevProgress/TolkachevProgress";
-import TolkachevSkills from "./TolkachevSkills/TolkachevSkills";
-import TolkachevInput from "./TolkachevInput/TolkachevInput";
 import Presentation from './Presentation/Presentation'
 
 class App extends React.Component {
+  state = {
+    presentation: {
+      presentName: 'Толкачев Иван',
+      presentTemplate: 'Привет! Меня зовут'
+    },
+    interests: [
+      {interestTitle: 'настолки'},
+      {interestTitle: 'футбол'},
+      {interestTitle: 'программирование'},
+    ],
+  }
 
   render = () => {
     return (
       <div className="App">
-        <Presentation/>
+        <Presentation presentation={this.state.presentation}/>
       </div>
     );
   }

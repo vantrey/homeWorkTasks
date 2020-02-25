@@ -5,9 +5,8 @@ class PresentTemplate extends React.Component {
   render = () => {
     return (
       <div className={style.presentTemplate}>
-        Привет! Меня зовут
+        {this.props.presentTemplate}
       </div>
-
     );
   }
 }
