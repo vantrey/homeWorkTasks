@@ -5,7 +5,7 @@ class GreetingsTitle extends React.Component {
   render = () => {
     return (
       <h3 className={styles.greetingsTitle}>
-        Скажи привет
+        {this.props.greetingsTitle}
       </h3>
     )
   }

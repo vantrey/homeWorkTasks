@@ -32,7 +32,7 @@ class Greetings extends React.Component {
   render = () => {
     return (
       <div className={styles.greetingsWrapper}>
-        <GreetingsTitle/>
+        <GreetingsTitle greetingsTitle={this.props.greetings.greetingsTitle}/>
         <GreetingsInput/>
         <GreetingsButton/>
         <GreetingsOutput/>

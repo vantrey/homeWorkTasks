@@ -17,7 +17,10 @@ class App extends React.Component {
         {interestName: 'футбол'},
         {interestName: 'программирование'},
       ],
-    }
+    },
+    greetings: {
+      greetingsTitle: 'Скажи привет',
+    },
   }
 
   render = () => {
@@ -25,7 +28,7 @@ class App extends React.Component {
       <div className='App'>
         <Presentation presentation={this.state.presentation}/>
         <Interests interestsContent={this.state.interestsContent}/>
-        <Greetings/>
+        <Greetings greetings={this.state.greetings}/>
       </div>
     );
   }
