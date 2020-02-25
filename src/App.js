@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Presentation from './Presentation/Presentation'
+import Interests from './Interests/Interests';
 
 class App extends React.Component {
   state = {
@@ -17,8 +18,9 @@ class App extends React.Component {
 
   render = () => {
     return (
-      <div className="App">
+      <div className='App'>
         <Presentation presentation={this.state.presentation}/>
+        <Interests interests={this.state.interests}/>
       </div>
     );
   }

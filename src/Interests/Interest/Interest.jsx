@@ -1,12 +1,14 @@
 import React from "react";
 import style from './Interest.module.css'
 
-const Interest = (props) => {
+class Interest extends React.Component {
+  render = () => {
+    return (
+      <div className={style.interest}>
+        <span className={style.interestTitle}>{this.props.interest.interestTitle}</span>
+      </div>
+    )
+  }
+}
 
-  return (
-    <div className={style.interest}>
-      <span>{props.skill}</span>
-    </div>
-  );
-};
 export default Interest;
