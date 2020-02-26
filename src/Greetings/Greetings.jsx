@@ -8,13 +8,15 @@ import GreetingsTitle from "./GreetingsTitle/GreetingsTitle"
 class Greetings extends React.Component {
 
   render = () => {
-
+    let greetingsOutputEl = this.props.greetings.greetingsOutput.map((item, index) => {
+      return <GreetingsOutput key={index} greetingsOutputText={item}/>
+    })
     return (
       <div className={styles.greetingsWrapper}>
         <GreetingsTitle greetingsTitle={this.props.greetings.greetingsTitle}/>
         <GreetingsInput inputRef={this.props.inputRef}/>
         <GreetingsButton addGreetingsOutput={this.props.addGreetingsOutput}/>
-        <GreetingsOutput/>
+        {greetingsOutputEl}
       </div>
 
     )
