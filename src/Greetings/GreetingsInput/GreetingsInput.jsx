@@ -8,7 +8,7 @@ class GreetingsInput extends React.Component {
       <input className={styles.greetingsInput}
              type='text'
              placeholder='введи свок имя'
-             ref=''
+             ref={this.props.inputRef}
       />
     )
   }
