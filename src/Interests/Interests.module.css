@@ -1,15 +1,14 @@
 .interestsWrapper {
   display: flex;
   flex-flow: column wrap;
-  width: 50%;
-  border: thin solid;
+  width: 40%;
+  border-bottom: thick solid black;
 }
 
 .interests {
-  border: 1px solid black;
-  margin: 5px;
-  padding: 5px;
+  margin: 10px 0 10px 0;
   display: flex;
   flex-wrap: wrap;
+  align-self: flex-end;
 }
 

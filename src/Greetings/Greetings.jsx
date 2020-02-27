@@ -9,6 +9,7 @@ class Greetings extends React.Component {
 
   render = () => {
     let greetingsOutputEl = this.props.greetings.greetingsOutput.map((item, index) => {
+
       return <GreetingsOutput key={index} greetingsOutputText={item}/>
     })
     return (
@@ -16,9 +17,9 @@ class Greetings extends React.Component {
         <GreetingsTitle greetingsTitle={this.props.greetings.greetingsTitle}/>
         <GreetingsInput inputRef={this.props.inputRef}/>
         <GreetingsButton addGreetingsOutput={this.props.addGreetingsOutput}/>
+        <h4 className={styles.outputTitle}>Записались:</h4>
         {greetingsOutputEl}
       </div>
-
     )
   }
 }

@@ -1,3 +1,4 @@
 .greetingsOutput {
-  border: thin solid black;
+  align-self: flex-start;
+  padding: 5px;
 }

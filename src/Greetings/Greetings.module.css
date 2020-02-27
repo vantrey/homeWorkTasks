@@ -1,6 +1,13 @@
 .greetingsWrapper {
-  border: thin solid black;
+  display: flex;
+  flex-flow: column wrap;
+  width: 40%;
+  margin-top: 30px;
+  padding: 10px;
 }
-.greetingsTitle {
-  font-style: italic;
+.outputTitle{
+  margin-top: 0;
+  align-self: flex-end;
+  padding: 5px;
 }
+

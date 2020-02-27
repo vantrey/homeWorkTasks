@@ -15,19 +15,20 @@ class App extends React.Component {
     interestsContent: {
       interestsTitle: 'Мои интересы',
       interests: [
-        {interestName: 'настолки'},
-        {interestName: 'футбол'},
-        {interestName: 'программирование'},
+        {interestName: '/настолки/'},
+        {interestName: '/футбол/'},
+        {interestName: '/программирование/'},
       ],
     },
     greetings: {
-      greetingsTitle: 'Скажи привет',
+      greetingsTitle: 'Записывайся в друзья!',
       greetingsOutput: ['qq'],
     },
   }
 
   addGreetingsOutput = () => {
     let currentInputValue = this.inputRef.current.value
+    this.inputRef.current.value= ''
     alert(currentInputValue)
     let newGreetings = {...this.state.greetings}
     newGreetings.greetingsOutput = [...this.state.greetings.greetingsOutput, currentInputValue]

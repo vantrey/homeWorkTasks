@@ -11,7 +11,7 @@ onAddGreetingsOutput = () => {
         className={styles.greetingsButton}
         onClick={this.onAddGreetingsOutput}
       >
-        Сказать привет
+        Записаться
       </button>
     )
   }
