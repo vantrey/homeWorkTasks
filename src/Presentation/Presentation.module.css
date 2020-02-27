@@ -1,3 +1,8 @@
 .presentation {
-    border: thin solid black;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    width: 50%;
+    font-size: 30px;
+    font-family: fantasy;
 }

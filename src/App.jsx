@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import styles from './App.module.css';
 import Presentation from './Presentation/Presentation'
 import Interests from './Interests/Interests';
 import Greetings from "./Greetings/Greetings";
@@ -36,7 +36,7 @@ class App extends React.Component {
 
   render = () => {
     return (
-      <div className='App'>
+      <div className={styles.app}>
         <Presentation presentation={this.state.presentation}/>
         <Interests interestsContent={this.state.interestsContent}/>
         <Greetings
