@@ -29,6 +29,7 @@ class Greetings extends React.Component {
         <GreetingsInput
           swishButtonDisable={this.props.swishButtonDisable}
           inputRef={this.props.inputRef}
+          addGreetingsOutput={this.props.addGreetingsOutput}
         />
         <GreetingsButton
           buttonDisable={this.props.greetings.buttonDisable}
