@@ -1,11 +1,37 @@
 .app {
-  border: thin solid;
   display: flex;
   flex-flow: column wrap;
   font-style: italic;
-  width: 40%;
+  width: 30%;
   margin: 0 auto;
-
 }
 
+@media (max-width: 1600px) {
+  .app {
+    width: 40%;
+  }
+}
 
+@media (max-width: 1200px) {
+  .app {
+    width: 50%;
+  }
+}
+
+@media (max-width: 900px) {
+  .app {
+    width: 60%;
+  }
+}
+
+@media (max-width: 700px) {
+  .app {
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  .app {
+    width: 95%;
+  }
+}
