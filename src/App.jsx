@@ -22,7 +22,7 @@ class App extends React.Component {
     },
     greetings: {
       greetingsTitle: 'Записывайся в друзья!',
-      greetingsOutput: ['qq'],
+      greetingsOutput: [],
       buttonDisable: true,
     },
   }
@@ -33,13 +33,15 @@ class App extends React.Component {
     alert(currentInputValue)
     let newGreetings = {...this.state.greetings}
     newGreetings.greetingsOutput = [...this.state.greetings.greetingsOutput, currentInputValue]
+    newGreetings.buttonDisable = true
     this.setState({greetings: newGreetings})
+
   }
 
   swishButtonDisable = () => {
     let newGreetings = {...this.state.greetings}
     newGreetings.buttonDisable = false
-      this.setState({greetings: newGreetings})
+    this.setState({greetings: newGreetings})
   }
 
   render = () => {
