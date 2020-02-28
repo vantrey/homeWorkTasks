@@ -30,7 +30,7 @@ class App extends React.Component {
   addGreetingsOutput = () => {
     let currentInputValue = this.inputRef.current.value
     this.inputRef.current.value = ''
-    alert(currentInputValue)
+    alert(`Привет, ${currentInputValue}`)
     let newGreetings = {...this.state.greetings}
     newGreetings.greetingsOutput = [...this.state.greetings.greetingsOutput, currentInputValue]
     newGreetings.buttonDisable = true

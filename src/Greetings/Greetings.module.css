@@ -16,8 +16,8 @@
   margin-top: 0;
   align-self: center;
   padding: 5px;
+  font-weight: lighter;
 }
-
 
 .even {
   align-self: flex-end;
@@ -26,6 +26,3 @@
 .odd {
   align-self: flex-start;
 }
-
-
-

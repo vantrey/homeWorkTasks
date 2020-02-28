@@ -1,6 +1,7 @@
 .app {
   display: flex;
   flex-flow: column wrap;
+  font-family: fantasy;
   font-style: italic;
   width: 30%;
   margin: 0 auto;

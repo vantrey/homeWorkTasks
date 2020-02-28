@@ -14,7 +14,7 @@ class GreetingsInput extends React.Component {
     return (
       <input className={styles.greetingsInput}
              type='text'
-             placeholder='введи свок имя'
+             placeholder='введи свое имя'
              ref={this.props.inputRef}
              onInput={this.onInputText}
              onKeyDown={this.onEnterKeyDown}
