@@ -10,6 +10,7 @@ onAddGreetingsOutput = () => {
       <button
         className={styles.greetingsButton}
         onClick={this.onAddGreetingsOutput}
+        disabled={this.props.buttonDisable}
       >
        <span className={styles.greetingsButtonText}>Записаться</span>
       </button>

@@ -26,8 +26,14 @@ class Greetings extends React.Component {
     return (
       <div className={styles.greetingsWrapper}>
         <GreetingsTitle greetingsTitle={this.props.greetings.greetingsTitle}/>
-        <GreetingsInput inputRef={this.props.inputRef}/>
-        <GreetingsButton addGreetingsOutput={this.props.addGreetingsOutput}/>
+        <GreetingsInput
+          swishButtonDisable={this.props.swishButtonDisable}
+          inputRef={this.props.inputRef}
+        />
+        <GreetingsButton
+          buttonDisable={this.props.greetings.buttonDisable}
+          addGreetingsOutput={this.props.addGreetingsOutput}
+        />
         <div className={styles.outputWrapper}>
           <h4 className={styles.outputTitle}>Записались:</h4>
           {greetingsOutputEl}
