@@ -11,7 +11,7 @@ onAddGreetingsOutput = () => {
         className={styles.greetingsButton}
         onClick={this.onAddGreetingsOutput}
       >
-        Записаться
+       <span className={styles.greetingsButtonText}>Записаться</span>
       </button>
     )
   }

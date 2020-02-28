@@ -1,5 +1,9 @@
 .greetingsButton {
-  width: 150px;
+  width: 30%;
   height: 30px;
   border: thin solid black;
+}
+
+.greetingsButtonText {
+  font-size: 100%;
 }
