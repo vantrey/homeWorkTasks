@@ -3,13 +3,13 @@ import styles from './GreetingsInput.module.css'
 
 class GreetingsInput extends React.Component {
   onEnterKeyDown = (e) => {
-    if (this.props.inputRef.current.value.trim() && e.keyCode === 13 ) {  // keyCode of "enter" = 13
+    if (this.props.inputRef.current.value.trim() && e.keyCode === 13) {  // keyCode of "enter" = 13
       this.props.addGreetingsOutput()
     }
-  }
+  };
   onInputText = () => {
     this.props.swishButtonDisable()
-  }
+  };
   render = () => {
     return (
       <input className={styles.greetingsInput}

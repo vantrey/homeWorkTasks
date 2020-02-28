@@ -5,7 +5,7 @@ import Interests from './Interests/Interests';
 import Greetings from "./Greetings/Greetings";
 
 class App extends React.Component {
-  inputRef = React.createRef()
+  inputRef = React.createRef();
 
   state = {
     presentation: {
@@ -25,26 +25,25 @@ class App extends React.Component {
       greetingsOutput: [],
       buttonDisable: true,
     },
-  }
+  };
 
   addGreetingsOutput = () => {
-    let currentInputValue = this.inputRef.current.value
-    this.inputRef.current.value = ''
-    alert(`Привет, ${currentInputValue}`)
-    let newGreetings = {...this.state.greetings}
-    newGreetings.greetingsOutput = [...this.state.greetings.greetingsOutput, currentInputValue]
-    newGreetings.buttonDisable = true
+    let currentInputValue = this.inputRef.current.value;
+    this.inputRef.current.value = '';
+    alert(`Привет, ${currentInputValue}`);
+    let newGreetings = {...this.state.greetings};
+    newGreetings.greetingsOutput = [...this.state.greetings.greetingsOutput, currentInputValue];
+    newGreetings.buttonDisable = true;
     this.setState({greetings: newGreetings})
-  }
+  };
 
   swishButtonDisable = () => {
     if (this.inputRef.current.value.trim()) {
-      let newGreetings = {...this.state.greetings}
-      newGreetings.buttonDisable = false
+      let newGreetings = {...this.state.greetings};
+      newGreetings.buttonDisable = false;
       this.setState({greetings: newGreetings})
     }
-  }
-
+  };
 
   render = () => {
     return (

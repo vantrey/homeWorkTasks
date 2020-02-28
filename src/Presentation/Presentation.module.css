@@ -1,7 +1,7 @@
 .presentation {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    width: 100%;
-    font-size: 30px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  width: 100%;
+  font-size: 30px;
 }

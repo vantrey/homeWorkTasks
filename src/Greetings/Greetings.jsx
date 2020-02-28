@@ -6,7 +6,6 @@ import GreetingsOutput from "./GreetingsOutput/GreetingsOutput"
 import GreetingsTitle from "./GreetingsTitle/GreetingsTitle"
 
 class Greetings extends React.Component {
-
   render = () => {
     let greetingsOutputEl = this.props.greetings.greetingsOutput.map((item, index) => {
       if (index % 2) {
@@ -22,7 +21,7 @@ class Greetings extends React.Component {
           </div>
         )
       }
-    })
+    });
     return (
       <div className={styles.greetingsWrapper}>
         <GreetingsTitle greetingsTitle={this.props.greetings.greetingsTitle}/>
