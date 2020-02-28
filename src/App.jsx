@@ -35,13 +35,14 @@ class App extends React.Component {
     newGreetings.greetingsOutput = [...this.state.greetings.greetingsOutput, currentInputValue]
     newGreetings.buttonDisable = true
     this.setState({greetings: newGreetings})
-
   }
 
   swishButtonDisable = () => {
-    let newGreetings = {...this.state.greetings}
-    newGreetings.buttonDisable = false
-    this.setState({greetings: newGreetings})
+    if (this.inputRef.current.value.trim()) {
+      let newGreetings = {...this.state.greetings}
+      newGreetings.buttonDisable = false
+      this.setState({greetings: newGreetings})
+    }
   }
 
   render = () => {

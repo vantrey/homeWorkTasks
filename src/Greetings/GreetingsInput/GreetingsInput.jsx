@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './GreetingsInput.module.css'
 
 class GreetingsInput extends React.Component {
-  onInputText = () => {
+  onInputText = (e) => {
     this.props.swishButtonDisable()
   }
   render = () => {
