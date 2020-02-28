@@ -1,8 +1,8 @@
 .interestsWrapper {
   display: flex;
   flex-flow: column wrap;
-  width: 40%;
   border-bottom: thick solid black;
+  width: 100%;
 }
 
 .interests {

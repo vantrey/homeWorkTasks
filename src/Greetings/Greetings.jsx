@@ -35,12 +35,10 @@ class Greetings extends React.Component {
           buttonDisable={this.props.greetings.buttonDisable}
           addGreetingsOutput={this.props.addGreetingsOutput}
         />
-        <div className={styles.outputWrapper}>
+        <div className={styles.greetingsOutputWrapper}>
           <h4 className={styles.outputTitle}>Записались:</h4>
           {greetingsOutputEl}
         </div>
-
-
       </div>
     )
   }

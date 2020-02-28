@@ -1,18 +1,17 @@
 .greetingsWrapper {
   display: flex;
   flex-flow: column wrap;
-  width: 40%;
   margin-top: 30px;
-  padding: 10px;
 }
 
-.outputWrapper {
+.greetingsOutputWrapper {
   display: flex;
   flex-flow: column wrap;
   align-self: center;
-  width: 70%;
+  width: 50%;
   margin-top: 10px;
 }
+
 .outputTitle {
   margin-top: 0;
   align-self: center;
