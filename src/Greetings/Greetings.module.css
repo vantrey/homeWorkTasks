@@ -5,9 +5,28 @@
   margin-top: 30px;
   padding: 10px;
 }
-.outputTitle{
+
+.outputWrapper {
+  display: flex;
+  flex-flow: column wrap;
+  align-self: center;
+  width: 70%;
+  margin-top: 10px;
+}
+.outputTitle {
   margin-top: 0;
-  align-self: flex-end;
+  align-self: center;
   padding: 5px;
 }
+
+
+.even {
+  align-self: flex-end;
+}
+
+.odd {
+  align-self: flex-start;
+}
+
+
 
