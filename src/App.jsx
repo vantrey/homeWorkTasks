@@ -27,12 +27,12 @@ class App extends React.Component {
     },
   };
 
-  addGreetingsOutput = () => {
-    let currentInputValue = this.inputRef.current.value;
-    this.inputRef.current.value = '';
-    alert(`Привет, ${currentInputValue}`);
+  addGreetingsOutput = (text) => {
+    // let currentInputValue = this.inputRef.current.value;
+    // this.inputRef.current.value = '';
+    // alert(`Привет, ${currentInputValue}`);
     let newGreetings = {...this.state.greetings};
-    newGreetings.greetingsOutput = [...this.state.greetings.greetingsOutput, currentInputValue];
+    newGreetings.greetingsOutput = [...this.state.greetings.greetingsOutput, text];
     newGreetings.buttonDisable = true;
     this.setState({greetings: newGreetings})
   };
