@@ -1,13 +1,12 @@
 import React from 'react'
 import styles from './Greetings.module.css'
-import GreetingsInput from "./GreetingsInput/GreetingsInput"
-import GreetingsButton from "./GreetingsButton/GreetingsButton"
 import GreetingsOutput from "./GreetingsOutput/GreetingsOutput"
 import GreetingsTitle from "./GreetingsTitle/GreetingsTitle"
+import AddText from "./AddText/AddText";
 
 class Greetings extends React.Component {
   render = () => {
-    let greetingsOutputEl = this.props.greetings.greetingsOutput.map((item, index) => {
+    let greetingsOutputEls = this.props.greetings.greetingsOutput.map((item, index) => {
       if (index % 2) {
         return (
           <div key={index} className={styles.odd}>
@@ -25,18 +24,10 @@ class Greetings extends React.Component {
     return (
       <div className={styles.greetingsWrapper}>
         <GreetingsTitle greetingsTitle={this.props.greetings.greetingsTitle}/>
-        <GreetingsInput
-          swishButtonDisable={this.props.swishButtonDisable}
-          inputRef={this.props.inputRef}
-          addGreetingsOutput={this.props.addGreetingsOutput}
-        />
-        <GreetingsButton
-          buttonDisable={this.props.greetings.buttonDisable}
-          addGreetingsOutput={this.props.addGreetingsOutput}
-        />
+        <AddText addGreetingsOutput={this.props.addGreetingsOutput}/>
         <div className={styles.greetingsOutputWrapper}>
           <h4 className={styles.outputTitle}>Записались:</h4>
-          {greetingsOutputEl}
+          {greetingsOutputEls}
         </div>
       </div>
     )
