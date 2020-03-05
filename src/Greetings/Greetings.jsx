@@ -6,21 +6,17 @@ import AddText from "./AddText/AddText";
 
 class Greetings extends React.Component {
   render = () => {
-    let greetingsOutputEls = this.props.greetings.greetingsOutput.map((item, index) => {
-      if (index % 2) {
-        return (
+    let greetingsOutputEls = this.props.greetings.greetingsOutput.map((text, index) => {
+      return (
+        index % 2 ?
           <div key={index} className={styles.odd}>
-            <GreetingsOutput greetingsOutputText={item}/>
-          </div>
-        )
-      } else {
-        return (
+            <GreetingsOutput greetingsOutputText={text}/>
+          </div> :
           <div key={index} className={styles.even}>
-            <GreetingsOutput greetingsOutputText={item}/>
+            <GreetingsOutput greetingsOutputText={text}/>
           </div>
-        )
-      }
-    });
+      )
+    })
     return (
       <div className={styles.greetingsWrapper}>
         <GreetingsTitle greetingsTitle={this.props.greetings.greetingsTitle}/>
