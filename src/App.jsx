@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './App.module.css';
-import Monday from "./Monday/Monday";
-import Tuesday from "./Tuesday/Tuesday";
+import Monday from "./Pages/Monday/Monday";
+import Tuesday from "./Pages/Tuesday/Tuesday";
 import {HashRouter, Route} from "react-router-dom";
 import NavMenu from "./NavMenu/NavMenu";
 

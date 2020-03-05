@@ -10,7 +10,6 @@ class NavMenu extends React.Component {
   }
   onClickCurrPage = (e) => {
     this.setState({currentPage: e.currentTarget.innerHTML})
-    console.log(this.state.currentPage)
   }
   onShowFilterClick = () => {
     this.setState({isHidden: false})
