@@ -39,5 +39,4 @@ class NavMenu extends React.Component {
   }
 }
 
-
 export default NavMenu
