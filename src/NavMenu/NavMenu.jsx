@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './NavMenu.module.css';
 import {NavLink} from "react-router-dom";
+import Button from "./Button/Button";
 
 class NavMenu extends React.Component {
   state = {
-    currentPage: '',
+    currentPage: 'Monday',
     isHidden: false,
   }
   onClickCurrPage = (e) => {
@@ -22,8 +23,8 @@ class NavMenu extends React.Component {
       <nav className={styles.navMenuWrapper}>
         <div className={styles.navMenuTitle}>
           <h3>MENU</h3>
-          {this.state.isHidden && <button onClick={this.onShowFilterClick}>show</button>}
-          {!this.state.isHidden && <button onClick={this.onHideFilterClick}>hide</button>}
+          {this.state.isHidden && <Button title={`show`} onBtnClick={this.onShowFilterClick}/>}
+          {!this.state.isHidden && <Button title={`hide`} onBtnClick={this.onHideFilterClick}/>}
         </div>
         {!this.state.isHidden &&
         <div className={styles.navMenu}>

@@ -29,7 +29,6 @@ class AddText extends React.Component {
   onBtnClick = () => {
     this.addNewText()
   }
-
   render = () => {
     return (
       <div className={styles.addTextWrapper}>
@@ -41,6 +40,7 @@ class AddText extends React.Component {
         />
         <Button
           onBtnClick={this.onBtnClick}
+          title={`Записаться`}
         />
       </div>
     )

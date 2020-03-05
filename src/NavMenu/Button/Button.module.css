@@ -1,0 +1,14 @@
+.button {
+  height: 30px;
+  border-radius: 1px;
+}
+
+.button:focus {
+ outline: none;
+}
+
+.buttonTitle {
+  font-size: 100%;
+  font-weight: bold;
+  padding: 3px;
+}
