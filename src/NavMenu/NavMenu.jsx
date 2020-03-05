@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './NavMenu.module.css';
-import {NavLink} from "react-router-dom";
 import Button from "./Button/Button";
+import Day from "./Day/Day";
 
 class NavMenu extends React.Component {
   state = {
@@ -18,6 +18,13 @@ class NavMenu extends React.Component {
     this.setState({isHidden: true})
   }
   render = () => {
+    let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    let daysEls = days.map((day, i) => {
+      return (
+        <Day key={i} dayName={day} pathName={`/${day}`} onClickCurrPage={this.onClickCurrPage}/>
+      )
+    })
+
     return (
       <nav className={styles.navMenuWrapper}>
         <div className={styles.navMenuTitle}>
@@ -27,11 +34,7 @@ class NavMenu extends React.Component {
         </div>
         {!this.state.isHidden &&
         <div className={styles.navMenu}>
-          <NavLink to='/Monday' activeClassName={styles.active} onClick={this.onClickCurrPage}>Monday</NavLink>
-          <NavLink to='/Tuesday' activeClassName={styles.active} onClick={this.onClickCurrPage}>Tuesday</NavLink>
-          <NavLink to='/Wednesday' activeClassName={styles.active} onClick={this.onClickCurrPage}>Wednesday</NavLink>
-          <NavLink to='/Thursday' activeClassName={styles.active} onClick={this.onClickCurrPage}>Thursday</NavLink>
-          <NavLink to='/Friday' activeClassName={styles.active} onClick={this.onClickCurrPage}>Friday</NavLink>
+          {daysEls}
         </div>
         }
       </nav>

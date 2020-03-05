@@ -12,6 +12,7 @@ class App extends React.Component {
       <HashRouter>
         <div className={styles.app}>
           <NavMenu/>
+          <Route exact path='/' render={() => <Monday/>}/>
           <Route path='/Monday' render={() => <Monday/>}/>
           <Route path='/Tuesday' render={() => <Tuesday/>}/>
         </div>

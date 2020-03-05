@@ -25,16 +25,6 @@
   align-items: inherit;
 }
 
-.navMenu a {
-  padding: 5px;
-  text-decoration: none;
-  color: #0003ff;
-}
-
-.navMenu a.active {
-  color: #ff4000;
-}
-
 @media (max-width: 500px) {
   .navMenuWrapper {
     height: auto;
