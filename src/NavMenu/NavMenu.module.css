@@ -31,7 +31,6 @@
   color: #0003ff;
 }
 
-
 .navMenu a.active {
   color: #ff4000;
 }
@@ -41,9 +40,11 @@
     height: auto;
     width: 100%;
   }
+
   .navMenuTitle {
     flex-direction: row;
   }
+
   .navMenu {
     flex-direction: row;
   }
