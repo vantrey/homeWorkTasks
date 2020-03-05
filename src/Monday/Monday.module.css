@@ -1,0 +1,38 @@
+.Monday {
+  display: flex;
+  flex-flow: column wrap;
+  font-family: fantasy;
+  font-style: italic;
+  width: 30%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1600px) {
+  .Monday {
+    width: 40%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .Monday {
+    width: 50%;
+  }
+}
+
+@media (max-width: 900px) {
+  .Monday {
+    width: 60%;
+  }
+}
+
+@media (max-width: 700px) {
+  .Monday {
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  .Monday {
+    width: 95%;
+  }
+}
