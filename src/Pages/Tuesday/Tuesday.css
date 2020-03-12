@@ -1,0 +1,28 @@
+.tuesday {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.todoList {
+text-align: left;
+}
+
+.todoList > div {
+  padding: 10px;
+}
+
+.todoList-task {
+
+}
+
+.todoList-task.done {
+  opacity: 0.5;
+}
+
+.filter-active {
+  background-color: #67fff5;
+}
+
+.error {
+  border-color: red;
+}
