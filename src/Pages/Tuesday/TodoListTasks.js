@@ -26,6 +26,7 @@ class TodoListTasks extends React.Component {
 }
 
 export default TodoListTasks;
+
 TodoListTasks.propTypes = {
   tasks: propTypes.arrayOf(propTypes.object)
 }
