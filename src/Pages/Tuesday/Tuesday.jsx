@@ -7,7 +7,7 @@ import {restoreState, saveState} from "./actualState"
 
 class Tuesday extends React.Component {
   componentDidMount() {
-    restoreState(this.settingState, this.nextTaskId)
+    restoreState(this.setStateFromSave, this.nextTaskId)
   }
 
   state = {
@@ -17,7 +17,7 @@ class Tuesday extends React.Component {
 
   nextTaskId = 0
 
-  settingState = (state, nextTaskId) => {
+  setStateFromSave = (state, nextTaskId) => {
     this.setState(state)
     this.nextTaskId = nextTaskId
   }

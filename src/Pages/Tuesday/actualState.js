@@ -2,7 +2,7 @@ export const saveState = (state) => {
   let stareAsString = JSON.stringify(state)
   localStorage.setItem('our-state', stareAsString)
 }
-export const restoreState = (settingState, nextTaskId) => {
+export const restoreState = (setStateFromSave, nextTaskId) => {
   let state = {
     tasks: [],
     filterValue: 'All'
@@ -15,6 +15,6 @@ export const restoreState = (settingState, nextTaskId) => {
         nextTaskId = t.id + 1
       }
     })
-    settingState(state, nextTaskId)
+    setStateFromSave(state, nextTaskId)
   }
 }
