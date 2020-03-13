@@ -4,7 +4,7 @@
 }
 
 .todoList {
-text-align: left;
+  text-align: left;
 }
 
 .todoList > div {
@@ -26,3 +26,31 @@ text-align: left;
 .error {
   border-color: red;
 }
+
+.todoList-newTaskForm {
+  display: flex;
+}
+
+.todoList-newTaskForm button {
+  padding: 10px;
+}
+
+.toDoListSet {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5px;
+}
+
+.priority {
+  display: flex;
+  justify-content: space-between;
+  width: inherit;
+  margin-top: 5px;
+}
+
+.priority span {
+  font-weight: bold;
+}
+
+
+

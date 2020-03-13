@@ -22,12 +22,12 @@ class Tuesday extends React.Component {
     this.nextTaskId = nextTaskId
   }
 
-  addTask = (newTitleText) => {
+  addTask = (newTitleText, priority) => {
     let newTask = {
       id: this.nextTaskId,
       title: newTitleText,
       isDone: false,
-      priority: 'low'
+      priority: priority
     }
     this.nextTaskId++
     let newTasks = [...this.state.tasks, newTask]

@@ -5,6 +5,7 @@ class TodoListHeader extends React.Component {
   state = {
     error: false,
     title: '',
+    priority: 'low', // medium, high
   }
 
   onAddTaskClick = () => {
@@ -13,7 +14,7 @@ class TodoListHeader extends React.Component {
       this.setState({error: true})
     } else {
       this.setState({error: false, title: ''})
-      this.props.addTask(newTitle)
+      this.props.addTask(newTitle, this.state.priority)
     }
   }
 
@@ -26,21 +27,33 @@ class TodoListHeader extends React.Component {
       this.onAddTaskClick()
     }
   }
-
+  onChangeSelect = (e) => {
+    this.setState({priority: e.currentTarget.value})
+  }
   render = () => {
     let classError = this.state.error ? 'error' : ''
     return (
       <div className="todoList-header">
         <h3 className="todoList-header__title">What to Learn</h3>
         <div className="todoList-newTaskForm">
-          <input
-            value={this.state.title}
-            onKeyPress={this.onAddTaskKeyPress}
-            onChange={this.onChangeTitle}
-            type="text"
-            placeholder="New task name"
-            className={classError}
-          />
+          <div className={'toDoListSet'}>
+            <input
+              value={this.state.title}
+              onKeyPress={this.onAddTaskKeyPress}
+              onChange={this.onChangeTitle}
+              type="text"
+              placeholder="New task name"
+              className={classError}
+            />
+            <div className='priority'>
+            <span> Set priority </span>
+            <select  onChange={this.onChangeSelect}>
+              <option value={`low`}>low</option>
+              <option value={`medium`}>medium</option>
+              <option value={`high`}>high</option>
+            </select>
+            </div>
+          </div>
           <button onClick={this.onAddTaskClick}>Add</button>
         </div>
       </div>
