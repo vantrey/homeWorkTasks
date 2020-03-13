@@ -19,6 +19,9 @@ class TodoListTask extends React.Component {
   }
   render = () => {
     let classForTask = this.props.task.isDone ? 'todoList-task done' : 'todoList-task'
+    let classForPriority = this.props.task.priority === 'high' ? 'priority-high' :
+      this.props.task.priority === 'medium' ? "priority-medium" : 'priority-low'
+
     return (
       <div className={classForTask}>
         <input type={'checkbox'}
@@ -32,7 +35,9 @@ class TodoListTask extends React.Component {
             onChange={this.onTitleChanged}
           />
           : < span onClick={this.activateEditMode}>
-        {this.props.task.id} - {this.props.task.title} - priority: {this.props.task.priority}
+            {this.props.task.id} -
+            <span className='titleTask'>{this.props.task.title}</span> -
+            priority: <span className={classForPriority}>{this.props.task.priority}</span>
           </span>}
       </div>
     );

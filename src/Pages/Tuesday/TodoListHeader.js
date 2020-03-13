@@ -45,7 +45,7 @@ class TodoListHeader extends React.Component {
               placeholder="New task name"
               className={classError}
             />
-            <div className='priority'>
+            <div className='prioritySet'>
             <span> Set priority </span>
             <select  onChange={this.onChangeSelect}>
               <option value={`low`}>low</option>

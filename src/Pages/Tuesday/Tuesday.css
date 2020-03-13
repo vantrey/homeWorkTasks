@@ -41,16 +41,33 @@
   margin-right: 5px;
 }
 
-.priority {
+.prioritySet {
   display: flex;
   justify-content: space-between;
   width: inherit;
   margin-top: 5px;
 }
 
-.priority span {
+.prioritySet span {
   font-weight: bold;
 }
 
+.priority-high {
+  color: #ff0001;
+}
+
+.priority-medium {
+  color: #ff8d00;
+}
+
+.priority-low {
+  color: #000aff;
+}
+
+.titleTask {
+  font-family: sans-serif;
+  font-weight: bolder;
+  font-style: italic;
+}
 
 
