@@ -1,41 +1,44 @@
-.navMenuWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 15%;
-  height: 100vh;
-  background-color: antiquewhite;
-  padding: 5px;
+.navMenuWrapper
+{
+    width: 15%;
+    height: 100vh;
+    padding: 5px;
+
+    background-color: antiquewhite;
+
+    composes: flexColumnAlignCenter from '../index.css';
 }
 
-.navMenuTitle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.navMenuTitle
+{
+    composes: flexColumnAlignCenter from '../index.css';
 }
 
-.navMenuTitle h3 {
-  margin: 15px;
+.navMenuTitle h3
+{
+    margin: 15px;
 }
 
-.navMenu {
-  display: flex;
-  flex-direction: inherit;
-  flex-wrap: wrap;
-  align-items: inherit;
+.navMenu
+{
+    composes: flexColumnAlignCenter from '../index.css';
 }
 
-@media (max-width: 500px) {
-  .navMenuWrapper {
-    height: auto;
-    width: 100%;
-  }
+@media (max-width: 600px)
+{
+    .navMenuWrapper
+    {
+        width: 100%;
+        height: auto;
+    }
 
-  .navMenuTitle {
-    flex-direction: row;
-  }
+    .navMenuTitle
+    {
+        flex-direction: row;
+    }
 
-  .navMenu {
-    flex-direction: row;
-  }
+    .navMenu
+    {
+        flex-direction: row;
+    }
 }
