@@ -123,7 +123,7 @@ function checkValidServiceWorker(swUrl, config) {
     })
     .catch(() => {
       console.log(
-        'No internet connection found. Tuesday is running in offline mode.'
+        'No internet connection found. TodoList is running in offline mode.'
       );
     });
 }

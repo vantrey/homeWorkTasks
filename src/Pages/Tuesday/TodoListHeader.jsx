@@ -46,12 +46,16 @@ class TodoListHeader extends React.Component {
               className={classError}
             />
             <div className='prioritySet'>
-            <span> Set priority </span>
-            <select  onChange={this.onChangeSelect}>
-              <option value={`low`}>low</option>
-              <option value={`medium`}>medium</option>
-              <option value={`high`}>high</option>
-            </select>
+              <span> Set priority </span>
+              <select
+                className={`priority-${this.state.priority}`}
+                value={this.state.priority}
+                onChange={this.onChangeSelect}
+              >
+                <option className='priority-low' value={`low`}>low</option>
+                <option className='priority-medium' value={`medium`}>medium</option>
+                <option className='priority-high' value={`high`}>high</option>
+              </select>
             </div>
           </div>
           <button onClick={this.onAddTaskClick}>Add</button>
