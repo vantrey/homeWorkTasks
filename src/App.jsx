@@ -5,7 +5,6 @@ import {HashRouter, Route} from "react-router-dom";
 import NavMenu from "./NavMenu/NavMenu";
 import Tuesday from "./Pages/Tuesday/Tuesday"
 
-
 class App extends React.Component {
   render = () => {
     return (
