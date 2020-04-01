@@ -27,7 +27,8 @@ class TodoListTask extends React.Component {
         <input type={'checkbox'}
                checked={this.props.task.isDone}
                onChange={this.onIsDoneChanged}/>
-        {this.state.editMode
+        {
+          this.state.editMode
           ? <input
             autoFocus={true}
             value={this.props.task.title}
@@ -37,8 +38,11 @@ class TodoListTask extends React.Component {
           : < span onClick={this.activateEditMode}>
             {this.props.task.id} -
             <span className='titleTask'>{this.props.task.title}</span> -
-            priority: <span className={classForPriority}>{this.props.task.priority}</span>
-          </span>}
+            priority: <span className={classForPriority}>{this.props.task.priority} - </span>
+            <span>c - {this.props.task.created}</span>
+          </span>
+        }
+
       </div>
     );
   }

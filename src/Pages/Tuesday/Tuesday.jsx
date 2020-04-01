@@ -7,10 +7,11 @@ class Tuesday extends React.Component {
   state = {
     loading: true
   }
+
   componentDidMount() {
-    setTimeout(()=>{
+    setTimeout(() => {
       this.setState({loading: false})
-    }, 3000)
+    }, 1000)
   }
 
   render = () => {
@@ -21,8 +22,8 @@ class Tuesday extends React.Component {
           (!this.state.loading && <TodoList/>)
         }
       </div>
-
     )
   }
 }
+
 export default Tuesday

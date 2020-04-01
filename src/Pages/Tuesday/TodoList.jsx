@@ -26,7 +26,10 @@ class TodoList extends React.Component {
       id: this.nextTaskId,
       title: newTitleText,
       isDone: false,
-      priority: priority
+      priority: priority,
+      created: new Date().toLocaleTimeString(),
+      updated:'',
+      finished:'',
     }
     this.nextTaskId++
     let newTasks = [...this.state.tasks, newTask]
@@ -48,8 +51,8 @@ class TodoList extends React.Component {
   changeStatus = (taskId, isDone) => {
     this.changeTask(taskId, {isDone: isDone})
   }
-  changeTaskTitle = (taskId, title) => {
-    this.changeTask(taskId, {title: title})
+  changeTaskTitle = (taskId, title, date) => {
+    this.changeTask(taskId, {title: title, updated: date})
   }
   changeTask = (taskId, obj) => {
     let newTask = this.state.tasks.map(t => {
