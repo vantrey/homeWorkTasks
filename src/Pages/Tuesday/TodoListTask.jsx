@@ -13,7 +13,7 @@ class TodoListTask extends React.Component {
   }
   onIsDoneChanged = (e) => {
     if (e.currentTarget.checked) {
-      let finishDate = new Date().toLocaleTimeString()
+      let finishDate = `at ${new Date().toLocaleTimeString()}`
       this.props.changeStatus(this.props.task.id, e.currentTarget.checked, finishDate)
       console.log(finishDate)
     } else {
@@ -21,7 +21,7 @@ class TodoListTask extends React.Component {
     }
   }
   onTitleChanged = (e) => {
-    let updDate = new Date().toLocaleTimeString()
+    let updDate = `at ${new Date().toLocaleTimeString()}`
     this.props.changeTaskTitle(this.props.task.id, e.currentTarget.value, updDate)
     console.log(updDate)
   }
@@ -31,7 +31,7 @@ class TodoListTask extends React.Component {
       this.props.task.priority === 'medium' ? "priority-medium" : 'priority-low'
 
     return (
-      <div className={classForTask}>
+      <div className={classForTask} onMouseOver={()=>{alert()}}>
         <input type={'checkbox'}
                checked={this.props.task.isDone}
                onChange={this.onIsDoneChanged}/>
@@ -43,16 +43,16 @@ class TodoListTask extends React.Component {
               onBlur={this.deactivateEditMod}
               onChange={this.onTitleChanged}
             />
-            : < span onClick={this.activateEditMode}>
+            : <span onClick={this.activateEditMode}>
             {this.props.task.id} -
             <span className='titleTask'>{this.props.task.title}</span> -
-            priority: <span className={classForPriority}>{this.props.task.priority} - </span>
+            priority: <span className={classForPriority}>{this.props.task.priority}</span>
           </span>
         }
         <div className={`date`}>
-          <div>{this.props.task.created}</div>
-          <div>{this.props.task.updated}</div>
-          <div>{this.props.task.finished}</div>
+          <div>created {this.props.task.created}</div>
+          <div>updated {this.props.task.updated}</div>
+          <div>finished {this.props.task.finished}</div>
         </div>
       </div>
     );

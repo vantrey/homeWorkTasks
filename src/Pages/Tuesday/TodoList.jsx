@@ -27,9 +27,9 @@ class TodoList extends React.Component {
       title: newTitleText,
       isDone: false,
       priority: priority,
-      created: new Date().toLocaleTimeString(),
-      updated:'',
-      finished:'',
+      created: `at ${new Date().toLocaleTimeString()}`,
+      updated:'never',
+      finished:'never',
     }
     this.nextTaskId++
     let newTasks = [...this.state.tasks, newTask]
