@@ -48,8 +48,8 @@ class TodoList extends React.Component {
       saveState(this.state)
     })
   }
-  changeStatus = (taskId, isDone) => {
-    this.changeTask(taskId, {isDone: isDone})
+  changeStatus = (taskId, isDone, date) => {
+    this.changeTask(taskId, {isDone: isDone, finished: date})
   }
   changeTaskTitle = (taskId, title, date) => {
     this.changeTask(taskId, {title: title, updated: date})

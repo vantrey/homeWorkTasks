@@ -12,10 +12,18 @@ class TodoListTask extends React.Component {
     this.setState({editMode: false})
   }
   onIsDoneChanged = (e) => {
-    this.props.changeStatus(this.props.task.id, e.currentTarget.checked)
+    if (e.currentTarget.checked) {
+      let finishDate = new Date().toLocaleTimeString()
+      this.props.changeStatus(this.props.task.id, e.currentTarget.checked, finishDate)
+      console.log(finishDate)
+    } else {
+      this.props.changeStatus(this.props.task.id, e.currentTarget.checked)
+    }
   }
   onTitleChanged = (e) => {
-    this.props.changeTaskTitle(this.props.task.id, e.currentTarget.value)
+    let updDate = new Date().toLocaleTimeString()
+    this.props.changeTaskTitle(this.props.task.id, e.currentTarget.value, updDate)
+    console.log(updDate)
   }
   render = () => {
     let classForTask = this.props.task.isDone ? 'todoList-task done' : 'todoList-task'
@@ -29,20 +37,23 @@ class TodoListTask extends React.Component {
                onChange={this.onIsDoneChanged}/>
         {
           this.state.editMode
-          ? <input
-            autoFocus={true}
-            value={this.props.task.title}
-            onBlur={this.deactivateEditMod}
-            onChange={this.onTitleChanged}
-          />
-          : < span onClick={this.activateEditMode}>
+            ? <input
+              autoFocus={true}
+              value={this.props.task.title}
+              onBlur={this.deactivateEditMod}
+              onChange={this.onTitleChanged}
+            />
+            : < span onClick={this.activateEditMode}>
             {this.props.task.id} -
             <span className='titleTask'>{this.props.task.title}</span> -
             priority: <span className={classForPriority}>{this.props.task.priority} - </span>
-            <span>c - {this.props.task.created}</span>
           </span>
         }
-
+        <div className={`date`}>
+          <div>{this.props.task.created}</div>
+          <div>{this.props.task.updated}</div>
+          <div>{this.props.task.finished}</div>
+        </div>
       </div>
     );
   }
