@@ -13,10 +13,10 @@
 
 .taskWrapper {
   position: relative;
+  width: max-content;
 }
 
 .todoList-task {
-  width: max-content;
 }
 
 .todoList-task.done {

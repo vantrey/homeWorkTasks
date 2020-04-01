@@ -3,6 +3,7 @@ import TodoListHeader from "./TodoListHeader";
 import TodoListTasks from "./TodoListTasks";
 import TodoListFooter from "./TodoListFooter";
 import {restoreState, saveState} from "./actualState"
+import getCurrentDate from "./currentDate"
 
 class TodoList extends React.Component {
   componentDidMount() {
@@ -27,7 +28,7 @@ class TodoList extends React.Component {
       title: newTitleText,
       isDone: false,
       priority: priority,
-      created: `at ${new Date().toLocaleTimeString()}`,
+      created: getCurrentDate(),
       updated:'never',
       finished:'never',
     }
