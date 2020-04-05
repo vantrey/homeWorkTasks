@@ -5,9 +5,6 @@ import Loading from "./Loading/Loading"
 import {connect} from "react-redux"
 
 class Tuesday extends React.Component {
-  state = {
-    loading: true
-  }
 
   componentDidMount() {
     setTimeout(() => {
