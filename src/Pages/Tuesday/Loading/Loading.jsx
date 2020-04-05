@@ -4,6 +4,7 @@ import styles from './Loading.module.css'
 class Loading extends React.Component {
   render = () => {
     return (
+      <div className={styles.loadingWrap}>
         <div className={styles.cssloadCssloadWrap2}>
           <div className={styles.cssloadWrap}>
             <div className={styles.cssloadOverlay}></div>
@@ -27,6 +28,7 @@ class Loading extends React.Component {
             </div>
           </div>
         </div>
+      </div>
     )
   }
 }
