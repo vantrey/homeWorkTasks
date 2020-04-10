@@ -2,9 +2,9 @@ const SET_STYLE = 'settingsReducer/SET_STYLE'
 
 const initialState = {
   styles: [
-    {value: 'light', checked: true},
-    {value: 'dark', checked: false},
-    {value: 'green', checked: false},
+    {title: 'Light', value: 'light', checked: true},
+    {title: 'Dark', value: 'dark', checked: false},
+    {title: 'Kids', value: 'kids', checked: false},
   ]
 }
 export const settingsReducer = (state = initialState, action) => {

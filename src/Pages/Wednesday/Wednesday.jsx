@@ -11,16 +11,20 @@ class Wednesday extends React.Component {
     this.props.setStyle(value)
   }
 
-  switchersEls = this.props.styles.map((s, i) =>
-    <StyleSwitcher value={this.props.style} checked={this.props.checked} setStyle={this.setStyle}/>
-  )
-
   render = () => {
-    let style = this.props.style === 'green' ? `${styles.wednesday} ${styles.green}` :
-      `${styles.wednesday}`
+    let checkedStyle = this.props.styles.find(style => style.checked)
     return (
-      <div className={style}>
-        {this.switchersEls}
+      <div className={`${styles.wednesday} ${styles[checkedStyle.value]}`}>
+        <div className={styles.themeWrapper}>
+          {this.props.styles.map((s, i) =>
+            <StyleSwitcher
+              key={i}
+              value={s.value}
+              checked={s.checked}
+              title={s.title}
+              setStyle={this.setStyle}/>
+          )}
+        </div>
       </div>
     )
   }

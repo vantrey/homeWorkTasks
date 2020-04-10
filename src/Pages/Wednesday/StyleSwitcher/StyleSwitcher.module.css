@@ -1,4 +1,9 @@
 .switcher {
-
+  position: relative;
+  z-index: 2;
 }
 
+.switcher span {
+cursor: pointer;
+
+}
