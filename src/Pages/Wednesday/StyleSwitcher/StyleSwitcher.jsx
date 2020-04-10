@@ -2,20 +2,22 @@ import React from "react"
 import styles from "./StyleSwitcher.module.css"
 
 
-
 class StyleSwitcher extends React.Component {
 
-  setStyle = () => {
-
+  onStyleChange = (e) => {
+    this.props.setStyle(e.target.value)
   }
 
   render = () => {
 
     return (
       <div className={styles.switcher}>
-        <input type={`radio`}/> светлая
-        <input type={`radio`}/>
-        <input type={`radio`}/>
+        <input
+          name={`style`}
+          type={`radio`}
+          value={this.props.value}
+          checked={this.props.checked}
+          onChange={this.onStyleChange}/> зеленая
       </div>
     )
   }
