@@ -1,0 +1,15 @@
+.wednesday {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  border: thin solid black;
+}
+.green {
+  background-color: green;
+}
+
+.light {
+
+}
+
+

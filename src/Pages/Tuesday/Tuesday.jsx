@@ -3,6 +3,7 @@ import TodoList from "./TodoList"
 import "./Tuesday.css"
 import Loading from "./Loading/Loading"
 import {connect} from "react-redux"
+import {setLoadingAC} from "../../redux/loadingReduser"
 
 class Tuesday extends React.Component {
 
@@ -16,8 +17,8 @@ class Tuesday extends React.Component {
     return (
       <div className="tuesday">
         {
-          (this.props.loading && <Loading/>) ||
-          (!this.props.loading && <TodoList/>)
+          (this.props.isLoading && <Loading/>) ||
+          (!this.props.isLoading && <TodoList/>)
         }
       </div>
     )
@@ -26,17 +27,13 @@ class Tuesday extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    loading: state.loading
+    isLoading: state.loading.isLoading
   }
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    setLoading: (loading) => {
-      const action = {
-        type: 'SET_LOADING',
-        loading: loading
-      }
-      dispatch(action)
+    setLoading: (isLoading) => {
+      dispatch(setLoadingAC(isLoading))
     }
   }
 }
