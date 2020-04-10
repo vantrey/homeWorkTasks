@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "70f1ff94697a89efb835c3e539bbd4f7",
+    "revision": "92bb6a8c4cb14644bb9992d233aa6943",
     "url": "/ignat-tasks/index.html"
   },
   {
