@@ -1,4 +1,9 @@
 .app{
   display: flex;
-  flex-flow: row wrap;
+}
+
+@media screen and (max-width: 600px) {
+  .app {
+    flex-direction: column;
+  }
 }
