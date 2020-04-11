@@ -1,6 +1,6 @@
-import kids from '../Pages/Wednesday/Kids.module.css'
 import defaultStyle from '../Pages/Wednesday/Default.module.css'
 import dark from '../Pages/Wednesday/Dark.module.css'
+import kids from '../Pages/Wednesday/Kids.module.css'
 
 const SET_STYLE = 'settingsReducer/SET_STYLE'
 
