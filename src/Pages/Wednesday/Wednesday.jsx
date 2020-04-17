@@ -1,7 +1,6 @@
 import React from "react"
-import styles from "./Wednesday.module.css"
-
 import {connect} from "react-redux"
+import styles from "./Wednesday.module.css"
 import StyleSwitcher from "./StyleSwitcher/StyleSwitcher"
 import {setStyleAC} from "../../redux/settingsReducer"
 
