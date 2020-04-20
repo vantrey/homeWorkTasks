@@ -1,10 +1,10 @@
 import {combineReducers, createStore} from "redux"
 import {loadingReducer} from "./loadingReduser"
-import {settingsReducer} from "./settingsReducer"
+import {wednesdayReducer} from "./wednesdayReducer"
 
 let reducers = combineReducers({
   loading: loadingReducer,
-  settings: settingsReducer
+  wednesday: wednesdayReducer
 })
 
 const store = createStore(reducers)
