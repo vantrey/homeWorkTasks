@@ -32,7 +32,7 @@ class Wednesday extends React.Component {
     }
   }
 
-  onChangeClick = (e) => {
+  onCheckboxChanged = (e) => {
     this.props.setCheckbox(e.target.checked)
   }
 
@@ -49,7 +49,7 @@ class Wednesday extends React.Component {
               setStyle={this.setStyle}/>
           )}
           <div>
-            <input onChange={this.onChangeClick} type={`checkbox`} checked={this.props.isChecked}/>
+            <input onChange={this.onCheckboxChanged} type={`checkbox`} checked={this.props.isChecked}/>
             <button onClick={this.onRequestClick}>send
             </button>
           </div>
