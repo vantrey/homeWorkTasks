@@ -5,8 +5,9 @@
   width: 100%;
 }
 
-.themeSwitcherWrap {
+.content {
   padding: 10px;
+  z-index: 2;
 }
 
 @media screen and (max-width: 600px) {

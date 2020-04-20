@@ -44,8 +44,8 @@ class Wednesday extends React.Component {
 
   render = () => {
     return (
-      <div className={`${styles.wrapper} ${this.props.style.content}`}>
-        <div className={styles.themeSwitcherWrap}>
+      <div className={`${styles.wrapper} ${this.props.style.style}`}>
+        <div className={styles.content}>
           {this.props.stylesSwitchers.map((s, i) =>
             <StyleSwitcher
               key={i}
