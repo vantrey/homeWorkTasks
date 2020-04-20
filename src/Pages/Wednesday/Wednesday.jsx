@@ -12,7 +12,13 @@ class Wednesday extends React.Component {
   }
 
   onRequestClick = () => {
-    this.tryCatch(this.request)
+    let response = this.tryCatch(this.request)
+    response.then(res => {
+      console.log(res)
+    })
+      .catch((e) => {
+        console.log(e)
+      })
   }
 
   request = () => {
