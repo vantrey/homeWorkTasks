@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0bc74f22650ad547dda1e007a81a94d5",
+    "revision": "5404598eaaa8950054ea4d81bcd0a6cc",
     "url": "/ignat-tasks/index.html"
   },
   {
-    "revision": "08c1756082e19b8850c8",
-    "url": "/ignat-tasks/static/css/main.25f170d0.chunk.css"
+    "revision": "1b7149dc972eca681f76",
+    "url": "/ignat-tasks/static/css/main.1e1b090a.chunk.css"
   },
   {
     "revision": "ad569679ec644f6af33c",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ignat-tasks/static/js/2.bbe6e484.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "08c1756082e19b8850c8",
-    "url": "/ignat-tasks/static/js/main.4b1cc220.chunk.js"
+    "revision": "1b7149dc972eca681f76",
+    "url": "/ignat-tasks/static/js/main.3a1f0c0a.chunk.js"
   },
   {
     "revision": "d482873d6bd7c29361e6",
