@@ -16,9 +16,6 @@ class Wednesday extends React.Component {
     response.then(res => {
       console.log(res)
     })
-      .catch((e) => {
-        console.log(e)
-      })
   }
 
   request = () => {
