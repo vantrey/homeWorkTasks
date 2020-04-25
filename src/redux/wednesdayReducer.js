@@ -4,7 +4,7 @@ import kids from '../Pages/Wednesday/Kids.module.css'
 
 const SET_STYLE = 'wednesdayReducer/SET_STYLE'
 const SET_CHECKBOX = 'wednesdayReducer/SET_CHECKBOX'
-const GET_SERVER_STATUS = 'wednesdayReducer/GET_SERVER_STATUS'
+const SHOW_SERVER_STATUS = 'wednesdayReducer/SHOW_SERVER_STATUS'
 
 const initialState = {
   style: kids,
@@ -30,7 +30,8 @@ export const wednesdayReducer = (state = initialState, action) => {
       }
     case SET_CHECKBOX:
       return {...state, isChecked: action.isChecked}
-    case GET_SERVER_STATUS:
+
+    case SHOW_SERVER_STATUS:
       return {...state, serverStatus: action.serverStatus}
     default:
       return state
@@ -39,4 +40,4 @@ export const wednesdayReducer = (state = initialState, action) => {
 
 export const setStyle = (value) => ({type: SET_STYLE, value})
 export const setCheckbox = (isChecked) => ({type: SET_CHECKBOX, isChecked})
-export const getServerStatus = (serverStatus) => ({type: GET_SERVER_STATUS, serverStatus})
+export const showServerStatus = (serverStatus) => ({type: SHOW_SERVER_STATUS, serverStatus})

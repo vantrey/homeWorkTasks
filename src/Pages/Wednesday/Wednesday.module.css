@@ -26,7 +26,7 @@
 }
 
 .serverStatus span:nth-child(1) {
-  color: #ff4000;
+  color: rgb(2,44,23);
 }
 
 @media screen and (max-width: 600px) {

@@ -2,10 +2,11 @@ import React from "react"
 import {connect} from "react-redux"
 import styles from "./Wednesday.module.css"
 import StyleSwitcher from "./StyleSwitcher/StyleSwitcher"
-import {getServerStatus, setCheckbox, setStyle} from "../../redux/wednesdayReducer"
+import {setCheckbox, setStyle, showServerStatus} from "../../redux/wednesdayReducer"
 import {api} from "../../DAL/api"
 import {setLoading} from "../../redux/loadingReduser"
 import Preloader from "../../Loading/Preloader"
+import {multiColoredText} from "../../multiColoredText"
 
 class Wednesday extends React.Component {
 
@@ -18,7 +19,7 @@ class Wednesday extends React.Component {
     let success = this.props.isChecked
     let response = api.tryCatch(api.setServerStatus(success))
     response.then(data => {
-      this.props.getServerStatus(data)
+      this.props.showServerStatus(data)
       this.props.setLoading(false)
     })
   }
@@ -65,7 +66,7 @@ class Wednesday extends React.Component {
           <div className={styles.serverStatus}>
             {this.props.isLoading
               ? <Preloader/>
-              : <span>{this.props.serverStatus}</span>}
+              : multiColoredText.getText(this.props.serverStatus)}
           </div>
         </div>
 
@@ -85,6 +86,6 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, {
-  setCheckbox, setStyle, getServerStatus,
+  setCheckbox, setStyle, showServerStatus,
   setLoading
 })(Wednesday)
