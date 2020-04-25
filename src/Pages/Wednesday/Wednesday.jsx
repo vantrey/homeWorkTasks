@@ -3,7 +3,7 @@ import {connect} from "react-redux"
 import styles from "./Wednesday.module.css"
 import StyleSwitcher from "./StyleSwitcher/StyleSwitcher"
 import {setCheckbox, setStyle} from "../../redux/wednesdayReducer"
-import axios from 'axios'
+import {api} from "../../DAL/api"
 
 class Wednesday extends React.Component {
 
@@ -12,28 +12,29 @@ class Wednesday extends React.Component {
   }
 
   onRequestClick = () => {
-    let response = this.tryCatch(this.request)
+    let success = this.props.isChecked
+    let response = api.tryCatch(api.setServerStatus(success))
     response.then(res => {
-      console.log(res)
+      console.log('then', res)
     })
   }
 
-  request = () => {
-    return axios.post('https://neko-cafe-back.herokuapp.com/auth/test',
-      {title: 'new title', success: this.props.isChecked}
-    )
-  }
-
-  tryCatch = async (reqest) => {
-    try {
-      const response = await reqest()
-      console.log('answer:', response.data)
-      return response
-    } catch (e) {
-      console.log('error:', {...e})
-      return 'error'
+  /*  request = () => {
+      return axios.post('https://neko-cafe-back.herokuapp.com/auth/test',
+        {title: 'new title', success: this.props.isChecked}
+      )
     }
-  }
+
+    tryCatch = async (reqest) => {
+      try {
+        const response = await reqest()
+        console.log('answer:', response.data)
+        return response
+      } catch (e) {
+        console.log('error:', {...e})
+        return 'error'
+      }
+    }*/
 
   onCheckboxChanged = (e) => {
     this.props.setCheckbox(e.target.checked)
