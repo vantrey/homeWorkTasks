@@ -1,4 +1,4 @@
-import defaultStyle from '../Pages/Wednesday/Default.module.css'
+import light from '../Pages/Wednesday/Light.module.css'
 import dark from '../Pages/Wednesday/Dark.module.css'
 import kids from '../Pages/Wednesday/Kids.module.css'
 
@@ -7,11 +7,11 @@ const SET_CHECKBOX = 'wednesdayReducer/SET_CHECKBOX'
 const GET_SERVER_STATUS = 'wednesdayReducer/GET_SERVER_STATUS'
 
 const initialState = {
-  style: defaultStyle,
+  style: kids,
   stylesSwitchers: [
-    {title: 'Light', value: 'light', checked: true},
+    {title: 'Kids', value: 'kids', checked: true},
     {title: 'Dark', value: 'dark', checked: false},
-    {title: 'Kids', value: 'kids', checked: false},
+    {title: 'Light', value: 'light', checked: false},
   ],
   isChecked: false,
   serverStatus: ''
@@ -21,7 +21,7 @@ export const wednesdayReducer = (state = initialState, action) => {
     case SET_STYLE:
       return {
         ...state,
-        style: action.value === 'kids' ? kids : action.value === 'dark' ? dark : defaultStyle,
+        style: action.value === 'kids' ? kids : action.value === 'dark' ? dark : light,
         stylesSwitchers: state.stylesSwitchers.map(s => {
           if (s.value === action.value) {
             return {...s, checked: true}

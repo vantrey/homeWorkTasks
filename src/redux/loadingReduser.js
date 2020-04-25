@@ -1,7 +1,7 @@
 const SET_LOADING = 'loadingReducer/SET_LOADING'
 
 const initialState = {
-  isLoading: true
+  isLoading: false
 }
 export const loadingReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -13,7 +13,7 @@ export const loadingReducer = (state = initialState, action) => {
   }
 }
 
-export const setLoadingAC = (isLoading) => ({
+export const setLoading = (isLoading) => ({
   type: SET_LOADING,
   isLoading
 })

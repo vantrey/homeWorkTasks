@@ -1,3 +1,4 @@
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -6,8 +7,26 @@
 }
 
 .content {
+  width: inherit;
   padding: 10px;
   z-index: 2;
+}
+
+.sendBox {
+  padding-top: 20px;
+}
+
+.serverStatus {
+  padding-top: 50px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 35px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.serverStatus span:nth-child(1) {
+  color: #ff4000;
 }
 
 @media screen and (max-width: 600px) {

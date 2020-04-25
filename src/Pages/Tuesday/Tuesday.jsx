@@ -3,11 +3,12 @@ import TodoList from "./TodoList"
 import "./Tuesday.css"
 import Loading from "../../Loading/Loading"
 import {connect} from "react-redux"
-import {setLoadingAC} from "../../redux/loadingReduser"
+import {setLoading} from "../../redux/loadingReduser"
 
 class Tuesday extends React.Component {
 
   componentDidMount() {
+    this.props.setLoading(true)
     setTimeout(() => {
       this.props.setLoading(false)
     }, 3000)
@@ -33,7 +34,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     setLoading: (isLoading) => {
-      dispatch(setLoadingAC(isLoading))
+      dispatch(setLoading(isLoading))
     }
   }
 }
