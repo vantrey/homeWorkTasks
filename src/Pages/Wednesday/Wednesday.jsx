@@ -2,7 +2,7 @@ import React from "react"
 import {connect} from "react-redux"
 import styles from "./Wednesday.module.css"
 import StyleSwitcher from "./StyleSwitcher/StyleSwitcher"
-import {setCheckbox, setStyle} from "../../redux/wednesdayReducer"
+import {getServerStatus, setCheckbox, setStyle} from "../../redux/wednesdayReducer"
 import {api} from "../../DAL/api"
 
 class Wednesday extends React.Component {
@@ -14,8 +14,8 @@ class Wednesday extends React.Component {
   onRequestClick = () => {
     let success = this.props.isChecked
     let response = api.tryCatch(api.setServerStatus(success))
-    response.then(res => {
-      console.log('then', res)
+    response.then(data => {
+      this.props.getServerStatus(data)
     })
   }
 
@@ -58,6 +58,9 @@ class Wednesday extends React.Component {
             </button>
           </div>
         </div>
+        <div className={styles.serverStatus}>
+          {this.props.serverStatus}
+        </div>
       </div>
     )
   }
@@ -68,7 +71,8 @@ const mapStateToProps = (state) => {
     style: state.wednesday.style,
     stylesSwitchers: state.wednesday.stylesSwitchers,
     isChecked: state.wednesday.isChecked,
+    serverStatus: state.wednesday.serverStatus,
   }
 }
 
-export default connect(mapStateToProps, {setCheckbox, setStyle})(Wednesday)
+export default connect(mapStateToProps, {setCheckbox, setStyle, getServerStatus})(Wednesday)

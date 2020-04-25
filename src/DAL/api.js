@@ -18,7 +18,7 @@ export const api = {
     try {
       const response = await request()
       console.log('answer:', response.data)
-      return response
+      return response.data.errorText
     } catch (e) {
       console.log('error:', {...e})
       return 'error'
