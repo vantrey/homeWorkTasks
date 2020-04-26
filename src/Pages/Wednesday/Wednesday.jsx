@@ -2,11 +2,9 @@ import React from "react"
 import {connect} from "react-redux"
 import styles from "./Wednesday.module.css"
 import StyleSwitcher from "./StyleSwitcher/StyleSwitcher"
-import {setCheckbox, setStyle, showServerStatus} from "../../redux/wednesdayReducer"
-import {api} from "../../DAL/api"
-import {setLoading} from "../../redux/loadingReduser"
+import {getServerStatus, setCheckbox, setStyle} from "../../redux/wednesdayReducer"
 import Preloader from "../../Loading/Preloader"
-import {multiColoredText} from "../../multiColoredText"
+import MultiColoredText from "../../MultiColoredText/MultiColoredText.jsx"
 
 class Wednesday extends React.Component {
 
@@ -15,31 +13,8 @@ class Wednesday extends React.Component {
   }
 
   onRequestClick = () => {
-    this.props.setLoading(true)
-    let success = this.props.isChecked
-    let response = api.tryCatch(api.setServerStatus(success))
-    response.then(data => {
-      this.props.showServerStatus(data)
-      this.props.setLoading(false)
-    })
+  this.props.getServerStatus(this.props.isChecked)
   }
-
-  /*  request = () => {
-      return axios.post('https://neko-cafe-back.herokuapp.com/auth/test',
-        {title: 'new title', success: this.props.isChecked}
-      )
-    }
-
-    tryCatch = async (reqest) => {
-      try {
-        const response = await reqest()
-        console.log('answer:', response.data)
-        return response
-      } catch (e) {
-        console.log('error:', {...e})
-        return 'error'
-      }
-    }*/
 
   onCheckboxChanged = (e) => {
     this.props.setCheckbox(e.target.checked)
@@ -66,7 +41,7 @@ class Wednesday extends React.Component {
           <div className={styles.serverStatus}>
             {this.props.isLoading
               ? <Preloader/>
-              : multiColoredText.getText(this.props.serverStatus)}
+              : <MultiColoredText text={this.props.serverStatus}/>}
           </div>
         </div>
 
@@ -85,7 +60,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {
-  setCheckbox, setStyle, showServerStatus,
-  setLoading
-})(Wednesday)
+export default connect(mapStateToProps, {setCheckbox, setStyle, getServerStatus})(Wednesday)
