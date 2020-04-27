@@ -44,7 +44,6 @@ class Wednesday extends React.Component {
               : <MultiColoredText text={this.props.serverStatus}/>}
           </div>
         </div>
-
       </div>
     )
   }
