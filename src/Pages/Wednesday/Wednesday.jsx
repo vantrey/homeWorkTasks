@@ -41,7 +41,7 @@ class Wednesday extends React.Component {
           <div className={styles.serverStatus}>
             {this.props.isLoading
               ? <Preloader/>
-              : <MultiColoredText text={this.props.serverStatus}/>}
+              : <MultiColoredText>{this.props.serverStatus}</MultiColoredText>}
           </div>
         </div>
       </div>
