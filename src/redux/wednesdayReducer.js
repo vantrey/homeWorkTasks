@@ -1,7 +1,7 @@
 import light from '../Pages/Wednesday/Light.module.css'
 import dark from '../Pages/Wednesday/Dark.module.css'
 import kids from '../Pages/Wednesday/Kids.module.css'
-import {api} from "../DAL/api"
+import {api, tryCatch} from "../DAL/api"
 import {setLoading} from "./loadingReduser"
 
 const SET_STYLE = 'wednesdayReducer/SET_STYLE'
@@ -46,7 +46,7 @@ export const setServerStatus = (serverStatus) => ({type: SET_SERVER_STATUS, serv
 export const getServerStatus = (success) => {
   return (dispatch) => {
     dispatch(setLoading(true))
-    api.tryCatch(api.setServerStatus(success)).then(data => {
+    tryCatch(api.setServerStatus(success)).then(data => {
       dispatch(setServerStatus(data))
       dispatch(setLoading(false))
     })

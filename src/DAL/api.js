@@ -14,14 +14,14 @@ export const api = {
       )
     }
   },
-  async tryCatch(request) {
-    try {
-      const response = await request()
-      console.log('answer:', response.data)
-      return response.data.errorText
-    } catch (e) {
-      console.log('error:', {...e})
-      return 'error'
-    }
+}
+export const tryCatch = async (request) => {
+  try {
+    const response = await request()
+    console.log('answer:', response.data)
+    return response.data.errorText
+  } catch (e) {
+    console.log('error:', {...e})
+    return 'error'
   }
 }
