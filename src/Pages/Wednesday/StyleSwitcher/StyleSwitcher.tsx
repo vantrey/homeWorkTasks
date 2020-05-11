@@ -1,11 +1,17 @@
 import React from "react"
 import styles from "./StyleSwitcher.module.css"
 
+type PropsType = {
+  value: string
+  checked: boolean
+  title: string
+  setStyle: (value: string) => void
+}
 
-class StyleSwitcher extends React.Component {
+class StyleSwitcher extends React.Component<PropsType> {
 
-  onStyleChange = (e) => {
-    this.props.setStyle(e.target.id)
+  onStyleChange = (e: React.ChangeEvent<HTMLInputElement> | React.MouseEvent<HTMLElement>) => {
+    this.props.setStyle(e.currentTarget.id)
   }
   render = () => {
     return (
