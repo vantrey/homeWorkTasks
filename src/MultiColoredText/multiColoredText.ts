@@ -1,5 +1,9 @@
+type MultiColoredText = {
+  getChars: (text: string) => Array<string>
+  getRandomColor: () => string
+}
 
-export const multiColoredText = {
+export const multiColoredText: MultiColoredText = {
   getChars(text) {
     let words = text.split(' ').map((w, i, wrds) => {
       if (i === wrds.length - 1) {

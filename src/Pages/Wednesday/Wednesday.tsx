@@ -4,19 +4,35 @@ import styles from "./Wednesday.module.css"
 import StyleSwitcher from "./StyleSwitcher/StyleSwitcher"
 import {getServerStatus, setCheckbox, setStyle} from "../../redux/wednesdayReducer"
 import Preloader from "../../Loading/Preloader"
-import MultiColoredText from "../../MultiColoredText/MultiColoredText.jsx"
+import MultiColoredTextComponent from "../../MultiColoredText/MultiColoredTextComponent"
+import {AppStateType} from "../../redux/store";
+import {StyleSwitcherType} from "../../types/entities";
 
-class Wednesday extends React.Component {
+type MapStatePropsType = {
+  style: any
+  stylesSwitchers: Array<StyleSwitcherType>
+  isChecked: boolean
+  serverStatus: string
+  isLoading: boolean
+}
+type MapDispatchPropsType = {
+  setCheckbox: (isChecked: boolean) => void
+  setStyle: (value: string) => void
+  getServerStatus: (success: boolean) => void
+}
+type PropsType = MapStatePropsType & MapDispatchPropsType
 
-  setStyle = (value) => {
+class Wednesday extends React.Component<PropsType> {
+
+  setStyle = (value: string) => {
     this.props.setStyle(value)
   }
 
   onRequestClick = () => {
-  this.props.getServerStatus(this.props.isChecked)
+    this.props.getServerStatus(this.props.isChecked)
   }
 
-  onCheckboxChanged = (e) => {
+  onCheckboxChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
     this.props.setCheckbox(e.target.checked)
   }
 
@@ -30,7 +46,8 @@ class Wednesday extends React.Component {
               value={s.value}
               checked={s.checked}
               title={s.title}
-              setStyle={this.setStyle}/>
+              setStyle={this.setStyle}
+            />
           )}
           <div className={styles.sendBox}>
             <input onChange={this.onCheckboxChanged} type={`checkbox`} checked={this.props.isChecked}/>
@@ -41,7 +58,7 @@ class Wednesday extends React.Component {
           <div className={styles.serverStatus}>
             {this.props.isLoading
               ? <Preloader/>
-              : <MultiColoredText>{this.props.serverStatus}</MultiColoredText>}
+              : <MultiColoredTextComponent>{this.props.serverStatus}</MultiColoredTextComponent>}
           </div>
         </div>
       </div>
@@ -49,7 +66,7 @@ class Wednesday extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: AppStateType) => {
   return {
     style: state.wednesday.style,
     stylesSwitchers: state.wednesday.stylesSwitchers,
@@ -59,4 +76,8 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {setCheckbox, setStyle, getServerStatus})(Wednesday)
+export default connect<MapStatePropsType, MapDispatchPropsType, {}, AppStateType>(mapStateToProps, {
+  setCheckbox,
+  setStyle,
+  getServerStatus
+})(Wednesday)

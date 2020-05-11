@@ -3,11 +3,15 @@ import {loadingReducer} from "./loadingReduser"
 import {wednesdayReducer} from "./wednesdayReducer"
 import thunkMiddleware from 'redux-thunk'
 
-let reducers = combineReducers({
+let rootReducer = combineReducers({
   loading: loadingReducer,
   wednesday: wednesdayReducer
 })
 
-const store = createStore(reducers, applyMiddleware(thunkMiddleware))
+export type AppStateType = ReturnType<typeof rootReducer>
+
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware))
+
+// @ts-ignore
 window.store = store
 export default store
