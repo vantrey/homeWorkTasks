@@ -9,7 +9,7 @@ import {AppStateType} from "../../redux/store";
 import {StyleSwitcherType} from "../../types/entities";
 
 type MapStatePropsType = {
-  style: any
+  style: { readonly [key: string]: string }
   stylesSwitchers: Array<StyleSwitcherType>
   isChecked: boolean
   serverStatus: string

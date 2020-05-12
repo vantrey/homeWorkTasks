@@ -14,7 +14,7 @@ type ResponseDataType = {
 }
 
 export const api = {
-  setServerStatus(success: boolean): () => Promise<AxiosResponse<ResponseDataType>> {
+  setServerStatus(success: boolean) {
     return () => {
       return instance.post<ResponseDataType>('',
         {title: 'new title', success: success}

@@ -32,6 +32,7 @@ const initialState: InitialStateType = {
   isChecked: false,
   serverStatus: ''
 }
+
 export const wednesdayReducer = (state = initialState, action: WednesdayActionTypes): InitialStateType => {
   switch (action.type) {
     case SET_STYLE:
