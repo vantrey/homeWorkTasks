@@ -3,5 +3,3 @@ export type StyleSwitcherType = {
   value: string
   checked: boolean
 }
-
-

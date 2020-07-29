@@ -18,7 +18,7 @@ class NavMenu extends React.Component {
     this.setState({isHidden: true})
   }
   render = () => {
-    let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    let days = ['Greetings', 'TodoList', 'Themes'];
     let daysEls = days.map((day, i) => {
       return (
         <Day key={i} dayName={day} pathName={`/${day}`} onClickCurrPage={this.onClickCurrPage}/>

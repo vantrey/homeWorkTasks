@@ -4,6 +4,7 @@
 
 .todoList {
   text-align: left;
+  width: 400px;
 }
 
 .todoList > div {

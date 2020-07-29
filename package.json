@@ -2,7 +2,7 @@
   "name": "ignat-tasks",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vantrey.github.io/ignat-tasks",
+  "homepage": "https://vantrey.github.io/someProjects",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",

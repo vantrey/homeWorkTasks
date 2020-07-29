@@ -13,9 +13,9 @@ class App extends React.Component {
         <div className={styles.app}>
           <NavMenu/>
           <Route exact path='/' render={() => <Monday/>}/>
-          <Route path='/Monday' render={() => <Monday/>}/>
-          <Route path='/Tuesday' render={() => <Tuesday/>}/>
-          <Route path='/Wednesday' render={() => <Wednesday/>}/>
+          <Route path='/Greetings' render={() => <Monday/>}/>
+          <Route path='/TodoList' render={() => <Tuesday/>}/>
+          <Route path='/Themes' render={() => <Wednesday/>}/>
         </div>
       </HashRouter>
     )
